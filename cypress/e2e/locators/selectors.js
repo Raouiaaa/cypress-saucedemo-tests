@@ -2,6 +2,7 @@ const selectors = {
     username: "#user-name",
     password: "[data-test='password']",
     loginButton: "#login-button",
+    loginErrorMessage: "[data-test='error']",
     inventoryUrl: '/inventory.html',
     bikeLight: "Sauce Labs Bike Light",
     addToCart: "#add-to-cart",

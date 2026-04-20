@@ -22,6 +22,10 @@ class LoginPage {
         this.fillPassword(password);
         this.clickLoginButton();
     }
+
+    getErrorMessage() {
+        cy.get(selectors.loginErrorMessage);
+    }
 }
 
 export default new LoginPage();
