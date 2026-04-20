@@ -6,7 +6,8 @@ const selectors = {
     bikeLight: "Sauce Labs Bike Light",
     addToCart: "#add-to-cart",
     shoppingCartLink: "[data-test='shopping-cart-link']",
-    removeButton: "[data-test='remove-sauce-labs-bike-light']"
+    removeButton: "[data-test='remove-sauce-labs-bike-light']",
+    checkoutButton: "[data-test='checkout']"
 }
 
 export default selectors;
