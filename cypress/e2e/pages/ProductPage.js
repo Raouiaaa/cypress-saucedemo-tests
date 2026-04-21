@@ -1,8 +1,9 @@
 import selectors from "../locators/selectors";
+import {PRODUCTS} from "../constants/constants";
 
 class ProductPage {
     verifyProductPage() {
-        cy.contains(selectors.bikeLight).should('be.visible');
+        cy.contains(PRODUCTS.bikeLight).should('be.visible');
     }
 
     addToCart() {
@@ -22,9 +23,9 @@ class ProductPage {
     }
 
     verifyProductRemoved() {
-        cy.contains(selectors.bikeLight).should('not.exist');
+        cy.contains(PRODUCTS.bikeLight).should('not.exist');
         cy.get(selectors.shoppingCartLink).click();
-        cy.contains(selectors.bikeLight).should('not.exist');
+        cy.contains(PRODUCTS.bikeLight).should('not.exist');
     }
 }
 

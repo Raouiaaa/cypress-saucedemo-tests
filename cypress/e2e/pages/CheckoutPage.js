@@ -1,6 +1,11 @@
 import selectors from "../locators/selectors";
+import {URLS} from "../constants/constants";
 
 class CheckoutPage {
+    verifyCheckoutPage() {
+        cy.url().should('include', URLS.checkoutStepOneUrl);
+        cy.get(selectors.firstNameCheckout).should('be.visible');
+    }
     fillFirstName(firstName) {
         cy.get(selectors.firstNameCheckout).type(firstName);
     }
@@ -18,10 +23,20 @@ class CheckoutPage {
     }
 
     checkout(firstName, lastName, postalCode){
-        this.fillFirstName(firstName);
-        this.fillLastName(lastName);
-        this.fillPostalCode(postalCode);
+        if (firstName) {
+            this.fillFirstName(firstName);
+        }
+        if (lastName) {
+            this.fillLastName(lastName);
+        }
+        if (postalCode) {
+            this.fillPostalCode(postalCode);
+        }
         this.clickContinueButton();
+    }
+
+    getErrorMessage() {
+        return cy.get(selectors.errorMessage);
     }
 }
 

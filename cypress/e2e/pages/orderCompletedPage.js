@@ -1,8 +1,9 @@
 import selectors from "../locators/selectors";
+import {URLS} from "../constants/constants";
 
 class OrderCompletedPage {
     verifyOrderCompletedPage() {
-        cy.url().should('include', selectors.checkoutCompletedUrl);
+        cy.url().should('include', URLS.checkoutCompletedUrl);
         cy.contains(selectors.checkoutCompletedTitle).should('be.visible');
         cy.get(selectors.thankingPhrase).should('be.visible');
     }

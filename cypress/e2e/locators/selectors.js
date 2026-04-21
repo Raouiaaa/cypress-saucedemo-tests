@@ -3,8 +3,6 @@ const selectors = {
     password: "[data-test='password']",
     loginButton: "#login-button",
     loginErrorMessage: "[data-test='error']",
-    inventoryUrl: '/inventory.html',
-    bikeLight: "Sauce Labs Bike Light",
     productDetailsAddToCartButton: "#add-to-cart",
     shoppingCartLink: "[data-test='shopping-cart-link']",
     removeButton: "[data-test='remove-sauce-labs-bike-light']",
@@ -12,6 +10,7 @@ const selectors = {
     firstNameCheckout: "#first-name",
     lastNameCheckout: "#last-name",
     postalCode: "#postal-code",
+    errorMessage: "[data-test='error']",
     continueCheckoutButton: "#continue",
     paymentInfo: "[data-test='payment-info-label']",
     shippingInfo: "[data-test='payment-info-label']",
@@ -19,7 +18,6 @@ const selectors = {
     finishButton: "#finish",
     checkoutCompletedTitle: "Checkout: Complete!",
     thankingPhrase: "[data-test='complete-header']",
-    checkoutCompletedUrl: "/checkout-complete.html",
 }
 
 export default selectors;

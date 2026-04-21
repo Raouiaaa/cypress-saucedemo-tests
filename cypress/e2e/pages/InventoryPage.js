@@ -1,12 +1,13 @@
 import selectors from "../locators/selectors";
+import {URLS, PRODUCTS} from "../constants/constants";
 
 class InventoryPage {
     verifyInventoryPage() {
-        cy.url().should('include', selectors.inventoryUrl);
+        cy.url().should('include', URLS.inventoryUrl);
     }
 
     addToCart() {
-        cy.contains(selectors.bikeLight).click();
+        cy.contains(PRODUCTS.bikeLight).click();
     }
 }
 
