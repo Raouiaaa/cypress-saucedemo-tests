@@ -18,13 +18,17 @@ class LoginPage {
     }
 
     login(username, password){
-        this.fillUsername(username);
-        this.fillPassword(password);
+        if(username){
+            this.fillUsername(username);
+        }
+        if(password){
+            this.fillPassword(password);
+        }
         this.clickLoginButton();
     }
 
     getErrorMessage() {
-        cy.get(selectors.loginErrorMessage);
+        return cy.get(selectors.loginErrorMessage);
     }
 }
 
