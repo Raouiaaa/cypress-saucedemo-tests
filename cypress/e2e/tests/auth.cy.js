@@ -1,7 +1,7 @@
 import loginPage from "../pages/loginPage"
 
-describe("verify authentication", () => {
-    it("login with wrong credentials", () => {
+describe("Authentication", () => {
+    it("should not login with invalid credentials", () => {
         loginPage.visit();
         loginPage.login("wrongUser", "wrongPwd");
         loginPage.getErrorMessage()
@@ -16,4 +16,22 @@ describe("verify authentication", () => {
             .should('be.visible')
             .and('contain', 'Epic sadface: Username is required');
     })
+
+    it("should show error when username is empty", () => {
+        loginPage.visit();
+        loginPage.login("", "secret_sauce");
+
+        loginPage.getErrorMessage()
+            .should('be.visible')
+            .and('contain', 'Epic sadface: Username is required');
+    })
+
+    it("should show error when password is empty", () => {
+        loginPage.visit();
+        loginPage.login("standard_user", "");
+
+        loginPage.getErrorMessage()
+            .should('be.visible')
+            .and('contain', 'Epic sadface: Password is required');
+    });
 })

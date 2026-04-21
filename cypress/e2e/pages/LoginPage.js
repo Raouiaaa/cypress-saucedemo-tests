@@ -17,6 +17,7 @@ class LoginPage {
         cy.get(selectors.loginButton).click();
     }
 
+    // Cypress does not allow typing empty strings, so login() handles empty inputs conditionally
     login(username, password){
         if(username){
             this.fillUsername(username);

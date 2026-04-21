@@ -6,7 +6,7 @@ class ProductPage {
     }
 
     addToCart() {
-        cy.get(selectors.addToCart).click();
+        cy.get(selectors.productDetailsAddToCartButton).click();
     }
 
     goToCart() {
@@ -19,6 +19,12 @@ class ProductPage {
 
     goToCheckout() {
         cy.get(selectors.checkoutButton).click();
+    }
+
+    verifyProductRemoved() {
+        cy.contains(selectors.bikeLight).should('not.exist');
+        cy.get(selectors.shoppingCartLink).click();
+        cy.contains(selectors.bikeLight).should('not.exist');
     }
 }
 

@@ -5,8 +5,8 @@ import checkoutPage from "../pages/CheckoutPage";
 import overviewPage from "../pages/OverviewPage";
 import orderCompletedPage from "../pages/orderCompletedPage";
 
-describe("Purchase Product", () => {
-    it("should complete purchase successfully", () => {
+describe("Shopping Cart", () => {
+    it("should add a product to cart and remove it successfully", () => {
         loginPage.visit();
         loginPage.login("standard_user","secret_sauce");
 
@@ -16,14 +16,7 @@ describe("Purchase Product", () => {
         productPage.verifyProductPage();   
         productPage.addToCart();
         productPage.goToCart();
-        productPage.goToCheckout();
-
-        checkoutPage.checkout("first","last","1234")
-
-        overviewPage.verifyOverviewPage();
-        overviewPage.purshaseProduct();
-
-        orderCompletedPage.verifyOrderCompletedPage();
+        productPage.removeFromCart();
+        productPage.verifyProductRemoved();
     }) 
-
 })
