@@ -1,6 +1,13 @@
 import loginPage from "../pages/loginPage"
+import inventoryPage from "../pages/InventoryPage";
 
 describe("Authentication", () => {
+    it("should redirect user to inventory page after successful login", () => {
+        loginPage.visit();
+        loginPage.login("standard_user", "secret_sauce");
+        inventoryPage.verifyInventoryPage();
+    });
+
     it("should not login with invalid credentials", () => {
         loginPage.visit();
         loginPage.login("wrongUser", "wrongPwd");

@@ -3,6 +3,7 @@ const selectors = {
     password: "[data-test='password']",
     loginButton: "#login-button",
     loginErrorMessage: "[data-test='error']",
+    inventoryList: "[data-test='inventory-list']",
     productDetailsAddToCartButton: "#add-to-cart",
     shoppingCartLink: "[data-test='shopping-cart-link']",
     removeButton: "[data-test='remove-sauce-labs-bike-light']",
